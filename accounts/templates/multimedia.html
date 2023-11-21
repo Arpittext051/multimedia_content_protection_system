@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block mainbody %}
+
+
+ <div class="section-title text-center">
+                <h2 class="title">All Uploaded Files</h2>
+               
+            </div>
+<div class="container my-5">
+    <div class="cart-table table-responsive">
+
+         <input class="form-control my-3" id="myInput" type="text" placeholder="Search..">
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th class="">No</th>
+                    <th class="">User name</th>
+                    <th class="">Category</th>
+                    <th class="">File Name</th>
+                    <th class="">Date</th>
+                    <th class="">Option</th>
+                </tr>
+            </thead>
+            <tbody id="myTable">
+                {% for cart in his %}
+                <tr>
+                   
+                    <td class=""><a href="#">{{forloop.counter}}</a></td>
+                    <td class=""><a href="#">{{cart.user}}</a></td>
+                    <td class=""><a href="#">{{cart.option}}</a></td>
+                    <td class=""><a href="#">{{cart.file1}}</a></td>
+                    <td class=""><a href="#">{{cart.date}}</a></td>
+                    <td class=""><a href="{{cart.file1.url}}">Download</a></td>
+                   
+                   
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+{% endblock mainbody %}
